@@ -24,4 +24,4 @@ jobs:
         sudo mv chromedriver /usr/local/bin/
 
     - name: Run tests
-      run: python selenium/selen.py
+      run: python selen.py
