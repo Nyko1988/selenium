@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -18,10 +18,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install selenium
-        wget https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_linux64.zip
-        unzip chromedriver_linux64.zip
-        chmod +x chromedriver
-        sudo mv chromedriver /usr/local/bin/
+        choco install chromedriver --version=114.0.5735.16 -y
 
     - name: Run tests
       run: python selen.py
